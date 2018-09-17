@@ -17,6 +17,7 @@ pipeline {
       agent any
       steps {
         sh 'docker build -t leoncaiau912/spring-petclinic:latest .'
+	sh echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
       }
     }
     stage('Docker Push') {
